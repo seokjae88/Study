@@ -1,0 +1,4 @@
+﻿  stock.cpp
+D:\jsj\src\Test\study_programmers\stock.cpp(10,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\jsj\src\Test\study_programmers\stock.cpp(21,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  study_programmers.vcxproj -> D:\jsj\src\Test\study_programmers\Debug\study_programmers.exe
