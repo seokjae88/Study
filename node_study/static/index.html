@@ -1,0 +1,55 @@
+<!-- client.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/socket.io/socket.io.js"></script> <!-- 1 -->
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+        .chat_log{ width: 95%; height: 200px; }
+        .name{ width: 10%; }
+        .message{ width: 70%; }
+        .chat{ width: 10%; }
+    </style>
+</head>
+<body>
+<div>
+    <textarea id="chatLog" class="chat_log" readonly></textarea>
+</div>
+    FileName
+    <select id="filename">
+        <option value="ALL">ALL</option>
+    </select>
+    CampaignID <input type="text" id="campaignid" />
+    Keyword <input type="text" id="keyword" />
+    <input type="button" id="inquiry" value="조회"/><br>
+    <br>
+
+    <script>
+        var socket = io(); //1
+
+        socket.on('filelist',function(data){
+            var names = data.files;
+            console.log(data);
+            console.log(data.files.length);
+            $('#filename').empty().append('<option value="ALL">ALL</option>');
+            for(var i=0;i<data.files.length;i++){
+                $('#filename').append('<option value="'+names[i]+'">'+names[i]+"</option>");
+            }
+        });
+
+        socket.on('terminal', function(msg){ //3
+            console.log(msg);
+            $('#chatLog').empty().append(msg+'\n');
+            $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+        });
+
+        $('#inquiry').click(function(){
+            socket.emit('inquiry',{filename:$('#filename').val(),campaignid:$('#campaignid').val(),keyword:$('#keyword').val()});
+        });
+
+    </script>
+</body>
+</html>
