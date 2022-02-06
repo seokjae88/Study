@@ -1,67 +1,18 @@
 ﻿// study_1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
-/*
-* deep copy : copy constructor 를 따로 생성.
-* shallow copy : pointer 까지 복사해서 공유. 소멸시 메모리 해제 이슈.
-*/
-
 
 #include <iostream>
 
 using namespace std;
 
-class Car {
-private:
-    int year;
-    char* ptr;
-public:
-    Car(int _year) : year(_year) {
-        cout << "original constructor was called" << endl;
-        ptr = new char[300000];
-    }
-    ~Car() {
-        delete[] ptr;
-    }
-    Car(Car& _c) {
-        cout << "copy constructor was called" << endl;
-        year = _c.year;
-        ptr = new char[300000]; // copy constructor 가 필요한 이유
-    }
-    void showYear() {
-        cout << "This car was made in " << year << endl;
-    }
-};
+extern void virtualFunc();
+extern void data_type();
 
 int main()
 {
-    //Car c(2010);
-    //c.showYear();
-
-    //Car d = c;
-    //Car e(c);
-
-    //d.showYear();
-    //e.showYear();
-
-    //Car f(2030);
-    //f.showYear();
-
-    //f = c;
-
-
-    //Car* pc = new Car(2011);
-    //pc->showYear();
-
-    //Car* pd = new Car(*pc);
-    //pd->showYear();
-
-    Car c(2010);
-    {
-        Car d = c;
-    }
-
-
+    data_type();
+    return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cctype_lib.cpp" />
+    <ClCompile Include="copy_construct.cpp" />
+    <ClCompile Include="data_type.cpp" />
     <ClCompile Include="study_1.cpp" />
+    <ClCompile Include="virtual_func.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
