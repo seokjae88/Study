@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+  <%- include('../partials/nav') %>
+    <div class="body1">
+      <div class="wrapper">
+        <h3>Socket.io Chat Example</h3>
+        <ul class="pages">
+          <li class="error page">
+            <h3 class="error"></h3>
+          </li>
+          <li class="chat page">
+            <div class="chatArea">
+              <ul class="userlist"></ul>
+              <ul class="messages"></ul>
+            </div>
+            <input class="inputMessage" placeholder="Type here..." />
+          </li>
+          <li class="room page">
+            <div class="form">
+              <h3 class="title">Room List</h3>
+              <ul class="room_list"></ul>
+              <h3 class="title">Room Number</h3>
+              <input class="userroomInput" type="text" maxlength="14" />
+            </div>
+          </li>
+        </ul>
+        <script src="/js/chat.js"></script>
+      </div>
+    </div>
+</body>
+
+</html>
