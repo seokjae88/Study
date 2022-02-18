@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include('../partials/head') %>
+    <%- include('../../head') %>
     <link rel="stylesheet" href="/css/tetris.css">
   </head>
   <body>
-    <%- include('../partials/nav') %>
+    <%- include('../../nav') %>
 
-    <div class="body1">
+    <div id="div_section">
+      <div class="tb">
         <div id="wrapper">
-            <h2 class="title">테트리스</h2>
-            <div class="game-text">
-                <span>게임종료</span>
-                <button>다시시작</button>
-            </div>
-            <div class="score">0</div>
-            <div class="playground">
-                <ul></ul>
-            </div>
-        </div>
+          <h2 class="title">테트리스</h2>
+          <div class="game-text">
+              <span>게임종료</span>
+              <button>다시시작</button>
+          </div>
+          <div class="score">0</div>
+          <div class="playground">
+              <ul></ul>
+          </div>
+      </div>
+      </div>
         <script src="/js/tetris.js"></script>
     </div>
   </body>

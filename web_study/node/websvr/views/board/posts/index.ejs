@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include('../partials/head') %>
-  </head>
-  <body>
-    <%- include('../partials/nav') %>
 
-    <div class="body1">
+<head>
+  <%- include('../../head') %>
+    <link rel="stylesheet" href="/css/board.css">
+</head>
 
-      <h2 class="mb-3">Board</h2>
+<body>
+  <%- include('../../nav') %>
 
-      <table class="board-table table table-sm border-bottom">
+    <div id="div_section">
+      <div class="tb">
+        <h2 class="mb-3">Board</h2>
 
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col" class="date">Date</th>
-          </tr>
-        </thead>
+        <table class="board-table table table-sm border-bottom">
 
-        <tbody>
-          <% if(posts == null || posts.length == 0){ %>
+          <thead class="thead-light">
             <tr>
-              <td colspan=2> There is no data to show :( </td>
+              <th scope="col">Title</th>
+              <th scope="col" class="date">Date</th>
             </tr>
-          <% } %>
-          <% posts.forEach(function(post) { %>
-            <tr>
-              <td>
-                <a href="/board/posts/<%= post._id %>"><div class="ellipsis"><%= post.title %></div></a>
-              </td>
-              <td class="date">
-                <span data-date="<%= post.createdAt %>"></span>
-              </td>
-            </tr>
-          <% }) %>
-        </tbody>
+          </thead>
 
-      </table>
+          <tbody>
+            <% if(posts==null || posts.length==0){ %>
+              <tr>
+                <td colspan=2> There is no data to show :( </td>
+              </tr>
+              <% } %>
+                <% posts.forEach(function(post) { %>
+                  <tr>
+                    <td>
+                      <a href="/board/posts/<%= post._id %>">
+                        <div class="ellipsis">
+                          <%= post.title %>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="date">
+                      <span data-date="<%= post.createdAt %>"></span>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
 
-      <div>
-        <a class="btn btn-primary" href="/board/posts/new">New</a>
+        </table>
+
+        <div>
+          <a class="btn btn-primary" href="/board/posts/new">New</a>
+        </div>
       </div>
-
     </div>
-  </body>
+</body>
+
 </html>

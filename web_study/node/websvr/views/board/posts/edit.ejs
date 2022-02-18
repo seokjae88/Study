@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include('../partials/head') %>
+    <%- include('../../head') %>
+    <link rel="stylesheet" href="/css/board.css">
   </head>
   <body>
-    <%- include('../partials/nav') %>
+    <%- include('../../nav') %>
 
-    <div class="body1">
-
+    <div id="div_section">
+      <div class="tb">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb p-1 pl-2 pr-2">
           <li class="breadcrumb-item"><a href="/board/home">Home</a></li>
@@ -33,6 +34,7 @@
           <a class="btn btn-primary" href="/board/posts/<%= post._id %>">Back</a>
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+      </div>
 
       </form>
 

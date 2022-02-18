@@ -1,4 +1,3 @@
-
 let id = $('#id');
 let pw = $('#pw');
 let btn = $('#btn');
@@ -52,11 +51,9 @@ function login(id, pw) {
             'pw': pw
         })
     }).then((res) => {
-        console.log(res);
         return res.json();
     }).then((data) => {
         var url = window.location.href;
-        console.log(data)
         if (data.resultCode == 200) {
             window.location.href = url + '/home';
         } else {

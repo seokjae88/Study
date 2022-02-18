@@ -18,7 +18,7 @@ module.exports = {
                 options,
                 function (err, token) {
                     if (err) reject(err)      // callback
-                    console.log(token)
+                    //console.log(token)
                     resolve(token)
                 }
             )

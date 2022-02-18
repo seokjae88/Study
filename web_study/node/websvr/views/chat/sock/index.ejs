@@ -2,15 +2,15 @@
 <html>
 
 <head>
-  <%- include('../partials/head') %>
+  <%- include('../../head') %>
+    <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="/css/chat.css">
 </head>
 
 <body>
-  <%- include('../partials/nav') %>
-    <div class="body1">
-      <div class="wrapper">
-        <h3>Socket.io Chat Example</h3>
+  <%- include('../../nav') %>
+    <div id="div_section">
+      <div class="tb">
         <ul class="pages">
           <li class="error page">
             <h3 class="error"></h3>

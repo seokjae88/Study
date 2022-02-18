@@ -38,7 +38,7 @@ $(function () {
 $(function () {
   // 왼쪽메뉴 드롭다운
   //$(".sub_menu > ul.small_menu").hide();
-  $(".sub_menu > ul.big_menu").click(function () {
+  $(".side_menu > ul.big_menu").click(function () {
     $("ul", this).slideToggle(300);
     //$("ul", this).hide();
     //$(this).next($('.small_menu')).slideToggle('fast');
@@ -60,6 +60,9 @@ const getCookieValue = (key) => {
       break;
     }
   }
-  document.getElementById("username").innerText = result;
+  document.getElementById("side_user").innerText = result;
   return result;
+}
+const logoClick = () => {
+  window.location.href = "";
 }

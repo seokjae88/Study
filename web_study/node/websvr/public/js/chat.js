@@ -34,10 +34,7 @@ $(function() {
 
     const init = () => {
         if(currentpage == 'room') {
-            $roomPage.fadeOut();
             $roomPage.show();
-            $roomPage.off('click');
-
         } else if(currentpage == 'chat') {
             $chatPage.fadeOut();
             $roomPage.show();
@@ -48,6 +45,7 @@ $(function() {
             $errorPage.off('click');
         }
 
+        socket.emit('add user', username);
         currentpage = 'room';
         roomnum = '';
         $currentInput = $userroomInput.focus();
@@ -158,7 +156,6 @@ $(function() {
             $room_list.append($room);
         } else {
             for(var i=0; i<rooms.length; i++){
-
                 var $room = $('<li class="room_name">' + rooms[i] + '</li>');
                 $room_list.append($room);
             }
@@ -169,12 +166,12 @@ $(function() {
         var users = data.users;
 
         $user_list.empty();
-        var title = '접속중인 인원 : [' + users.length + ']명';
+        // var title = '접속중인 인원 : [' + users.length + ']명';
+        var title = users.length + ' 명 접속중';
         var $user = $('<li class="users">' + title + '</li>');
         $user_list.append($user);
 
         for(var i=0; i<users.length; i++) {
-
             var $user = $('<li class="users">' + users[i] + '</li>');
             $user_list.append($user);
         }
@@ -256,7 +253,6 @@ $(function() {
     }
 
     // Keyboard events
-
     $window.keydown(event => {
         // Auto-focus the current input when a key is typed
         if (!(event.ctrlKey || event.metaKey || event.altKey)) {
@@ -305,7 +301,7 @@ $(function() {
     socket.on('login', (data) => {
         connected = true;
         // Display the welcome message
-        var message = "Welcome to Socket.IO Chat – " + roomnum;
+        var message = "Chat – " + roomnum + "방";
         log(message, {
             prepend: true
         });
@@ -359,4 +355,5 @@ $(function() {
         log('attempt to reconnect has failed');
     });
 
+    init();
 });
