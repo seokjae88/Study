@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include('../../head') %>
+
+<head>
+  <%- include('../../head') %>
+  <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="/css/tetris.css">
-  </head>
-  <body>
-    <%- include('../../nav') %>
+</head>
+
+<body>
+  <%- include('../../nav') %>
 
     <div id="div_section">
-      <div class="tb">
-        <div id="wrapper">
-          <h2 class="title">테트리스</h2>
-          <div class="game-text">
-              <span>게임종료</span>
-              <button>다시시작</button>
-          </div>
-          <div class="score">0</div>
-          <div class="playground">
-              <ul></ul>
-          </div>
+      <div class="tb2">
+        <h2 class="title">테트리스</h2>
+        <div class="game-text">
+          <span>게임종료</span>
+          <button>다시시작</button>
+        </div>
+        <div class="score">0</div>
+        <div class="playground">
+          <ul></ul>
+        </div>
       </div>
+      <div class="tb3">
+        <h2 class="title">테트리스</h2>
+        <div class="score">0</div>
+        <div class="playground">
+          <ul></ul>
+        </div>
       </div>
-        <script src="/js/tetris.js"></script>
+      <script src="/js/tetris.js"></script>
     </div>
-  </body>
+</body>
+
 </html>

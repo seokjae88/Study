@@ -23,7 +23,7 @@ var server = http.createServer(app);
 const io = require('socket.io')(server);
 
 // socket.io의 이벤트 핸들러 등록 및 위의 socket.io 라이브러리를 socketIOHandler에 전달
-const socketIOHandler = require('../models/chat/Sock')(io);
+const socketIOHandler = require('../models/Sock')(io);
 
 /**
  * Listen on provided port, on all network interfaces.

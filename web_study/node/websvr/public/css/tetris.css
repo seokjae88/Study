@@ -3,12 +3,28 @@
     padding: 0;
 }
 ul {
-    list-style:none;
+    list-style: none;
 }
 
 body {
     height: 100%;
     overflow: hidden;
+}
+.tb2 {
+    width: 350px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #bcbcbc;
+    float: left;
+}
+.tb3 {
+    width: 350px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #bcbcbc;
+    float: left;
 }
 .title {
     text-align: center;

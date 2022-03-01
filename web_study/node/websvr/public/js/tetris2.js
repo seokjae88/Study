@@ -93,7 +93,7 @@ function prependNewLine(_playground) {
 }
 function renderBlocks(moveType = "") {
     tempMovingItem.moveType = moveType;
-
+    socket.emit('moving', tempMovingItem);
     const { type, direction, top, left } = tempMovingItem;
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach(moving => {
@@ -105,7 +105,6 @@ function renderBlocks(moveType = "") {
         const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
         const isAvailable = checkEmpty(target);
         if (isAvailable) {
-            socket.emit('moving', tempMovingItem);
             target.classList.add(type, "moving");
         } else {
             tempMovingItem = { ...movingItem }
@@ -117,7 +116,6 @@ function renderBlocks(moveType = "") {
             setTimeout(() => {
                 renderBlocks('retry');
                 if (moveType === "top") {
-                    socket.emit('seize', tempMovingItem);
                     seizeBlock(playground);
                 }
             }, 0)
@@ -234,10 +232,25 @@ socket.on('moving', (renderItem) => {
         const x = block[0] + left;
         const y = block[1] + top;
         const target = playground2.childNodes[y] ? playground2.childNodes[y].childNodes[0].childNodes[x] : null;
-        target.classList.add(type, "moving2");
+        const isAvailable = checkEmpty(target);
+        if (isAvailable) {
+            target.classList.add(type, "moving2");
+        } else {
+            setTimeout(() => {
+                if (renderItem.moveType === "top") {
+                    const movingBlocks2 = document.querySelectorAll(".moving2");
+                    movingBlocks2.forEach(moving => {
+                        moving.classList.remove("moving2");
+                        moving.classList.add("seized");
+                    })
+                    checkMatch(playground2);
+                }
+            }, 0)
+            return true;
+        }
     })
 });
-socket.on('seize', () => {
+socket.on('seized', () => {
     const movingBlocks = document.querySelectorAll(".moving2");
     movingBlocks.forEach(moving => {
         moving.classList.remove("moving2");
