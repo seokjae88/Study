@@ -37,7 +37,7 @@ public:
         if (q.size()) {
             truck = q.front();
             mTime = truck->time;
-        }        
+        }
     }
     void push(pTruckInfo truck) {
         if (q.empty()) {

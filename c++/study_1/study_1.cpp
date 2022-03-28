@@ -8,10 +8,11 @@ using namespace std;
 
 extern void virtualFunc();
 extern void data_type();
+extern void reference_variable();
 
 int main()
 {
-    data_type();
+    reference_variable();
     return 0;
 }
 

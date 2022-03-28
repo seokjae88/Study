@@ -6,10 +6,11 @@
 extern void printerMain();
 extern void truck_bridge();
 extern void stock();
+extern void disk_controller();
 
 int main()
 {
-    stock();
+    disk_controller();
     std::cout << "Hello World!\n";
 }
 

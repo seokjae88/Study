@@ -27,5 +27,8 @@
     <ClCompile Include="stock.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="disk_controller.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

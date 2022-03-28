@@ -171,10 +171,6 @@ io.on('connection', function (socket) {
         });
 
     })
-
-
-
-    출처: http://bcho.tistory.com/900?category=513811 [조대협의 블로그]
 });
 
 server.listen(7000, function() {

@@ -1,2 +1,4 @@
 D:\jsj\src\Test\study_programmers\Debug\study_programmers.exe
 D:\jsj\src\Test\study_programmers\Debug\study_programmers.pdb
+D:\jsj\src\study\study_programmers\Debug\study_programmers.exe
+D:\jsj\src\study\study_programmers\Debug\study_programmers.pdb

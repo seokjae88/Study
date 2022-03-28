@@ -142,6 +142,9 @@
     <ClCompile Include="cctype_lib.cpp" />
     <ClCompile Include="copy_construct.cpp" />
     <ClCompile Include="data_type.cpp" />
+    <ClCompile Include="make_circle.cpp" />
+    <ClCompile Include="reference_variable.cpp" />
+    <ClCompile Include="single_linked_list.cpp" />
     <ClCompile Include="study_1.cpp" />
     <ClCompile Include="virtual_func.cpp" />
   </ItemGroup>
