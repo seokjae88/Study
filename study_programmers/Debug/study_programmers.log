@@ -1,3 +1,0 @@
-﻿  disk_controller.cpp
-D:\jsj\src\study\study_programmers\disk_controller.cpp(120,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  study_programmers.vcxproj -> D:\jsj\src\study\study_programmers\Debug\study_programmers.exe
