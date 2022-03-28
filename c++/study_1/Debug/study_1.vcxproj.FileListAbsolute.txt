@@ -1,2 +1,0 @@
-D:\jsj\src\study\c++\study_1\Debug\study_1.exe
-D:\jsj\src\study\c++\study_1\Debug\study_1.pdb
